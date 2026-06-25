@@ -31,11 +31,6 @@ while true; do
         ffmpeg \
             -hide_banner \
             -loglevel info \
-            -analyzeduration 200000 \
-            -probesize 500000 \
-            -fflags +nobuffer+fastseek \
-            -flags low_delay \
-            -strict experimental \
             -re \
             -i "$url" \
             -vf "scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2" \
