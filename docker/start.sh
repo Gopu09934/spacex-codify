@@ -49,7 +49,7 @@ while true; do
             -ar 44100 \
             -ac 2 \
             -f flv \
-            "rtmp://a.rtmp.youtube.com/live2/${FACEBOOK_STREAM_KEY}" || true
+            "rtmps://live-api-s.facebook.com:443/rtmp/${FACEBOOK_STREAM_KEY}" || true
 
         echo "Finished: $url"
         echo "Waiting 5 seconds before next video..."
