@@ -33,7 +33,7 @@ while true; do
             -loglevel info \
             -re \
             -i "$url" \
-            -vf "scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2" \
+            -vf "scale=1280:720:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2" \
             -r 30 \
             -c:v libx264 \
             -preset ultrafast \
