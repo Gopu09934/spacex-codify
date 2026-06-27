@@ -29,28 +29,26 @@ while true; do
         echo "----------------------------------------"
 
         ffmpeg \
-            -hide_banner \
-            -loglevel info \
-            -re \
-            -i "$url" \
-            #-vf "scale=1280:720:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2" \
-            -r 30 \
-            -c:v libx264 \
-            -preset ultrafast \
-            -tune zerolatency \
-            -pix_fmt yuv420p \
-            -b:v 3000k \
-            -maxrate 3000k \
-            -bufsize 6000k \
-            -g 60 \
-            -keyint_min 60 \
-            -c:a aac \
-            -b:a 128k \
-            -ar 44100 \
-            -ac 2 \
-            -f flv \
-            "rtmps://live-api-s.facebook.com:443/rtmp/${FACEBOOK_STREAM_KEY}" || true
-
+    -hide_banner \
+    -loglevel info \
+    -re \
+    -i "$url" \
+    -r 30 \
+    -c:v libx264 \
+    -preset ultrafast \
+    -tune zerolatency \
+    -pix_fmt yuv420p \
+    -b:v 3000k \
+    -maxrate 3000k \
+    -bufsize 6000k \
+    -g 60 \
+    -keyint_min 60 \
+    -c:a aac \
+    -b:a 128k \
+    -ar 44100 \
+    -ac 2 \
+    -f flv \
+    "rtmps://live-api-s.facebook.com:443/rtmp/${FACEBOOK_STREAM_KEY}" || true
         echo "Finished: $url"
         echo "Waiting 5 seconds before next video..."
         sleep 5
